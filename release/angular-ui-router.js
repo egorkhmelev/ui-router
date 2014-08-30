@@ -3203,8 +3203,8 @@ function $ViewDirective(   $state,   $injector,   $uiViewScroll) {
 
     if ($animate) {
       return {
-        enter: function(element, target, cb) { $animate.enter(element, null, target, cb); },
-        leave: function(element, cb) { $animate.leave(element, cb); }
+        enter: function(element, target, cb) { $animate.enter(element, null, target).then(cb); },
+        leave: function(element, cb) { $animate.leave(element).then(cb); }
       };
     }
 
